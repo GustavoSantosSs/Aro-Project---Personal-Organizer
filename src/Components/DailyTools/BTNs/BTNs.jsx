@@ -1,6 +1,6 @@
 function BTNsDailyTools () {
     return (
-        <div class="w-[55%] border-2"></div>
+        <div class="w-[55%]"></div>
    )
 }
 
