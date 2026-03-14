@@ -3,7 +3,7 @@ import NextTasksHeaderTitle from "./Title/NextTasksHeaderTitle";
 
 function NextTasksHeader () {
     return (
-        <section id="NextTasksTitle-container" class="flex w-full">
+        <section id="NextTasksHeader-container" class="flex w-full px-[15px]">
             <NextTasksHeaderTitle />
             <NextTasksFilter />
         </section>
