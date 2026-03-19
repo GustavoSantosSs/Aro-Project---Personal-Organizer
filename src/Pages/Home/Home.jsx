@@ -26,18 +26,19 @@ export function Homee() {
         </section>
         <BtnDailyTools />
       </section>
-      <section id="PainelNextTasks" className="w-1/2 p-5 flex flex-wrap">
-        <section className="flex w-full p-[15px]">
+      <section id="PainelNextTasks" className="w-1/2 p-5 grid">
+        <section className="flex p-[15px]">
         <h1 className="flex w-[20%] justify-center items-center text-white font-bold text-[50px]">Hoje</h1>
         <MainFilter />
         <SubFilter />
         </section>
-        <section className="flex w-full py-[10px] px-[20px] flex-wrap gap-5">
+        <section className="flex py-[10px] px-[20px] flex-wrap gap-5">
         {tasks.map((task) => (
           <TaskCard key={task.id} task={task} />
         ))}
         </section>
       </section>
+      
     </div>
   );
 }
