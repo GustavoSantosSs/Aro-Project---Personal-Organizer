@@ -1,14 +1,14 @@
 import { useTasks } from "../../hooks/hooks";
 
 {  /* CSS */}
-import "./home.css";
+import "../Home/home.css";
 
 {  /* Components */}
 import { BtnDailyTools } from "../../components/dailyTools/btn/btn";
 import { TaskCard } from "../../components/painelNextTasks/nextTasksBlock/taskCard";
 import { DailyClock } from "../../components/dailyTools/clockEvents/clockEvents";
 import { MainFilter } from "../../components/painelNextTasks/header/mainFilter";
-import { SubFilter } from "../../components/painelNextTasks/header/subFilter";
+import { G1Filter, G2Filter } from "../../components/painelNextTasks/header/subFilter";
 
 export function Homee() {
   const { tasks } = useTasks();
@@ -28,17 +28,25 @@ export function Homee() {
       </section>
       <section id="PainelNextTasks" className="w-1/2 p-5 grid">
         <section className="flex p-[15px]">
-        <h1 className="flex w-[20%] justify-center items-center text-white font-bold text-[50px]">Hoje</h1>
-        <MainFilter />
-        <SubFilter />
+          <h1 className="flex w-[20%] justify-center items-center text-white font-bold text-[50px]">Hoje</h1>
+          <div id="FilterHeader" className="w-[80%] flex">
+            <section id="MainFilter" className="w-[70%] justify-end flex">
+              <MainFilter />
+            </section>
+            <section id="SubFilter" className="w-[30%] flex">
+              <ul className="flex flex-wrap gap-2 flex-col items-start absolute border-[3px] border-white p-[10px] rounded-[10px] bg-[#ffffff42]">
+                <G1Filter />
+                <G2Filter />
+              </ul>
+            </section>
+          </div>
         </section>
-        <section className="flex py-[10px] px-[20px] flex-wrap gap-5">
-        {tasks.map((task) => (
-          <TaskCard key={task.id} task={task} />
-        ))}
-        </section>
+          <section className="flex py-[10px] px-[20px] flex-wrap gap-5">
+            {tasks.map((task) => (
+              <TaskCard key={task.id} task={task} />
+            ))}
+          </section>
       </section>
-      
     </div>
   );
 }
