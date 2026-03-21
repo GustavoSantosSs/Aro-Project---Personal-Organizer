@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { SubFilter } from "./subFilter"
 
 export function MainFilter() {
   const [active, setActive] = useState("prioridade")
@@ -18,7 +19,9 @@ export function MainFilter() {
 
   const other = active === "prioridade" ? "hora" : "prioridade"
 
-  return (
+  return (          
+  <div id="FilterHeader" className="w-[80%] flex">
+        <section id="MainFilter" className="w-[70%] justify-end flex">
         <ul className="flex items-end flex-wrap absolute flex-col gap-2 p-[10px] rounded-[10px]">
         <li onClick={handleTopClick} id="p1Filter" className="flex items-center cursor-pointer">
                 <div id="bg-mainfilter" className={`flex items-center px-[15px] rounded-[10px] ${
@@ -47,5 +50,10 @@ export function MainFilter() {
         </li>
         )}
         </ul>
+        </section>
+        <section id="SubFilter" className="w-[30%] flex">
+        <SubFilter active={active}></SubFilter>
+        </section>
+  </div>
     )
 }

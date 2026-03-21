@@ -29,14 +29,7 @@ export function Homee() {
       <section id="PainelNextTasks" className="w-1/2 p-5 grid">
         <section className="flex p-[15px]">
           <h1 className="flex w-[20%] justify-center items-center text-white font-bold text-[50px]">Hoje</h1>
-          <div id="FilterHeader" className="w-[80%] flex">
-            <section id="MainFilter" className="w-[70%] justify-end flex">
-              <MainFilter />
-            </section>
-            <section id="SubFilter" className="w-[30%] flex">
-                <SubFilter />
-            </section>
-          </div>
+          <MainFilter />
         </section>
           <section className="flex py-[10px] px-[20px] flex-wrap gap-5">
             {tasks.map((task) => (
