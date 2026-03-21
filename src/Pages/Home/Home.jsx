@@ -8,7 +8,7 @@ import { BtnDailyTools } from "../../components/dailyTools/btn/btn";
 import { TaskCard } from "../../components/painelNextTasks/nextTasksBlock/taskCard";
 import { DailyClock } from "../../components/dailyTools/clockEvents/clockEvents";
 import { MainFilter } from "../../components/painelNextTasks/header/mainFilter";
-import { G1Filter, G2Filter } from "../../components/painelNextTasks/header/subFilter";
+import { SubFilter } from "../../components/painelNextTasks/header/subFilter";
 
 export function Homee() {
   const { tasks } = useTasks();
@@ -34,10 +34,7 @@ export function Homee() {
               <MainFilter />
             </section>
             <section id="SubFilter" className="w-[30%] flex">
-              <ul className="flex flex-wrap gap-2 flex-col items-start absolute border-[3px] border-white p-[10px] rounded-[10px] bg-[#ffffff42]">
-                <G1Filter />
-                <G2Filter />
-              </ul>
+                <SubFilter />
             </section>
           </div>
         </section>
