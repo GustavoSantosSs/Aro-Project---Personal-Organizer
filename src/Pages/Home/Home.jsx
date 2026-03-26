@@ -8,7 +8,6 @@ import { BtnDailyTools } from "../../components/dailyTools/btn/btn";
 import { TaskCard } from "../../components/painelNextTasks/nextTasksBlock/taskCard";
 import { DailyClock } from "../../components/dailyTools/clockEvents/clockEvents";
 import { MainFilter } from "../../components/painelNextTasks/header/mainFilter";
-import { SubFilter } from "../../components/painelNextTasks/header/subFilter";
 
 export function Homee() {
   const { tasks } = useTasks();

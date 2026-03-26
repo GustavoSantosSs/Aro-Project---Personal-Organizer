@@ -2,16 +2,30 @@ import { useState } from "react";
 
 export function SubFilter({active}) {
   const [isOpen, setIsOpen] = useState(false);
+  const [isTopActive, setIsTopActive] = useState(false);
+
   const [isActive, setActive] = useState(true);
+  const [isAcctive, setAcctive] = useState("g1");
+
+
 
 
   function handleTopClick() {
+    setIsTopActive(prev => !prev)
     setIsOpen((prev) => !prev);
   }
 
   function handleSelect() {
     setActive((prev) => !prev);
   }
+
+  function handleSelectPriority(option) {
+    setAcctive(option)
+    setIsOpen(false)
+    setIsTopActive(false)
+  }
+
+  const other = isAcctive === "g1" ? "G1" : "G2"
 
   return (
     <section>
@@ -22,13 +36,13 @@ export function SubFilter({active}) {
           className="flex bg-gradient-to-r from-[#f77] to-[#f93636] p-2 rounded-[10px]"
         >
           <h1 className="text-white bg-[#333] rounded-[10px] cursor-default text-[40px] font-bold px-2 cursor-pointer">
-            G1
+            {isAcctive === "g1" ? "G1" : "G2"}
           </h1>
         </li>
         {isOpen && (
-          <li className="flex bg-gradient-to-r from-[#fdd488] to-[#f99e36] p-2 rounded-[10px]">
+          <li onClick={() => handleSelectPriority(other)} className="flex bg-gradient-to-r from-[#fdd488] to-[#f99e36] p-2 rounded-[10px]">
             <h1 className="text-white bg-[#333] rounded-[10px] cursor-default text-[40px] font-bold px-2 cursor-pointer">
-              G2
+              {other === "g1" ? "G1" : "G2"}
             </h1>
           </li>
         )}
